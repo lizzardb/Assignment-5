@@ -58,8 +58,8 @@ function GenerateOutput(result)
  for (count = 0; count < result.GetAllCustomersResult.length; count++)
  {
     displaytext += result.GetAllCustomersResult[count].CustomerID + ", " +
-    result.GetAllCustomersResult[count].CustomerName + ", " +
-    result.GetAllCustomersResult[count].CustomerCity + "<br>";
+    result.GetAllCustomersResult[count].CompanyName + ", " +
+    result.GetAllCustomersResult[count].City + "<br>";
 
  }
  document.getElementById("customerdisplay").innerHTML = displaytext;
@@ -69,7 +69,7 @@ function GetOrderHistory()
 {
     var objRequest = new XMLHttpRequest();
     
-    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/getCustomerOrderHistory/customerID";
+    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/ServiceName/querystring";
     url += document.getElementById("custid").value;
     
     objRequest.onreadystatechange = function()
@@ -93,7 +93,7 @@ function GenerateOutput(result)
  for (count = 0; count < result.getCustomerOrderHistory.length; count++)
  {
     displaytext += result[count].ProductName + ", " +
-    result[count].TotalProductQuantityOrdered + "<br>";
+    result[count].Total + "<br>";
 
  }
  document.getElementById("historydisplay").innerHTML = displaytext;
@@ -103,7 +103,7 @@ function GetOrderList()
 {
     var objRequest = new XMLHttpRequest();
     
-    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/getOrdersForCustomer/customerID";
+    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/ServiceName/querystring";
     url += document.getElementById("custid").value;
     
     objRequest.onreadystatechange = function()
@@ -127,7 +127,12 @@ function GenerateOutput(result)
  for (count = 0; count < result.GetOrdersForCustomerResult.length; count++)
  {
     displaytext += result.GetOrdersForCustomerResult[count].OrderDate + ", " +
-    result.GetOrdersForCustomerResult[count].OrderID + "<br>";
+        result.GetOrdersForCustomerResult[count].OrderID + ", " +
+        result.GetOrdersForCustomerResult[count].ShipAddress + ", " +
+        result.GetOrdersForCustomerResult[count].ShipCity + ", " +
+        result.GetOrdersForCustomerResult[count].ShipName + ", " +
+        result.GetOrdersForCustomerResult[count].ShipPostcode + ", " +
+        result.GetOrdersForCustomerResult[count].ShippedDate + ", " + "<br>";
 
  }
  document.getElementById("listdisplay").innerHTML = displaytext;
