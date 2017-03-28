@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Assignment #5 - Liz Brown</title>
+    <link rel="stylesheet" type="text/css" href="styles/Assignment5.css" />
+    <script src="js/Assignment5.js"></script>
+</head>
+
+<body onload="GoDark()">
+
+<body>
+<section id="main" class="main">
+    <h1>Assignment #5</h1>
+    <hr>
+    <select onchange="OptionChange()" id="options">
+        <option>Please choose an area:</option>
+        <option>Customer List</option>
+        <option>Customer Order History</option>
+        <option>Customer Order List</option>
+    </select>
+    <hr>
+</section>
+
+<section id="area1" class="area1">
+    <label>Please enter a Customer ID: </label>
+    <input type="text" id="custid">
+    <br>
+    <button onclick="GetList()" id="customer">Get Customer List</button>
+    <br>
+    <label id="customerdisplay">Display customer list here:</label>
+</section>
+
+<section id="area2" class="area2">
+    <label>Please enter a Customer ID: </label>
+    <input type="text" id="custid">
+    <br>
+    <button onclick="GetOrderHistory()" id="history">Get Customer's Order History</button>
+    <br>
+    <label id="historydisplay">Display customer order hitory here:</label>
+</section>
+
+<section id="area3" class="area3">
+    <label>Please enter a Customer ID: </label>
+    <input type="text" id="custid">
+    <br>
+    <button onclick="GetOrderList()" id="list">Get Customer's Order List</button>
+    <br>
+    <label id="listdisplay">Display customer order list here:</label>
+</section>
+
+
+</body>
+</html>
