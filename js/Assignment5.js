@@ -35,7 +35,7 @@ function GetList()
 {
     var objRequest = new XMLHttpRequest();
     
-    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/ServiceName/querystring";
+    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/getAllCustomers";
     url += document.getElementById("custid").value;
     
     objRequest.onreadystatechange = function()
@@ -69,7 +69,7 @@ function GetOrderHistory()
 {
     var objRequest = new XMLHttpRequest();
     
-    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/ServiceName/querystring";
+    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/getCustomerOrderHistory";
     url += document.getElementById("custid").value;
     
     objRequest.onreadystatechange = function()
@@ -103,7 +103,7 @@ function GetOrderList()
 {
     var objRequest = new XMLHttpRequest();
     
-    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/ServiceName/querystring";
+    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/getOrdersForCustomer";
     url += document.getElementById("custid").value;
     
     objRequest.onreadystatechange = function()
